@@ -1,86 +1,175 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/Mario.tscn" type="PackedScene" id=1]
-[ext_resource path="res://chao.tres" type="TileSet" id=2]
-[ext_resource path="res://Tubo.tres" type="TileSet" id=3]
-[ext_resource path="res://tijolo.tres" type="TileSet" id=4]
-[ext_resource path="res://bonus.tres" type="TileSet" id=5]
+[ext_resource path="res://tilesmap/chao.tres" type="TileSet" id=2]
+[ext_resource path="res://tilesmap/Tubo.tres" type="TileSet" id=3]
+[ext_resource path="res://tilesmap/tijolo.tres" type="TileSet" id=4]
+[ext_resource path="res://tilesmap/bonus.tres" type="TileSet" id=5]
+[ext_resource path="res://scenes/Inimigo1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/moedas.tscn" type="PackedScene" id=7]
-[ext_resource path="res://bandeirao.tres" type="TileSet" id=8]
+[ext_resource path="res://scenes/bandeira.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Castelo.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/background/bg.png" type="Texture" id=10]
+[ext_resource path="res://assets/sons/musica-fase-um.wav" type="AudioStream" id=11]
+[ext_resource path="res://scenes/Inimigo10.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/placar.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Buraco.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scripts/mundo.gd" type="Script" id=15]
+
+
 
 [node name="mundo" type="Node2D"]
+script = ExtResource( 15 )
 
-[node name="Mario" parent="." instance=ExtResource( 1 )]
-position = Vector2( 108.702, 84.1994 )
-scale = Vector2( 1.5, 1.5 )
+[node name="Som_Fundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
 
-[node name="Camera2D" type="Camera2D" parent="Mario"]
-current = true
-limit_left = 0
-limit_top = 0
-limit_bottom = 0
+[node name="Moedas" type="Node2D" parent="."]
 
-[node name="tileChao" type="TileMap" parent="."]
+[node name="moedas" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 346.624, 189.33 )
+
+[node name="moedas11" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 416.289, 188.195 )
+
+[node name="moedas12" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 491.97, 186.514 )
+
+[node name="moedas13" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 561.753, 187.355 )
+
+[node name="moedas2" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 931.951, 278.029 )
+
+[node name="moedas15" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 1213.63, 309.493 )
+
+[node name="moedas14" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 867.878, 279.363 )
+
+[node name="moedas3" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 1632.8, 405.683 )
+
+[node name="moedas16" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 1737.68, 402.686 )
+
+[node name="moedas17" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 1902.5, 309.791 )
+
+[node name="moedas4" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 2273.52, 427.04 )
+
+[node name="moedas20" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 2346.6, 427.04 )
+
+[node name="moedas21" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 2417.15, 424.52 )
+
+[node name="moedas5" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 2305.55, 160.072 )
+
+[node name="moedas18" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 2386.46, 91.1499 )
+
+[node name="moedas19" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 2461.37, 160.072 )
+
+[node name="moedas6" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3569.7, 282.946 )
+
+[node name="moedas29" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3567.18, 363.581 )
+
+[node name="moedas27" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3642.78, 280.426 )
+
+[node name="moedas30" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3642.78, 361.061 )
+
+[node name="moedas28" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3718.37, 277.906 )
+
+[node name="moedas31" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3720.89, 358.541 )
+
+[node name="moedas22" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3569.7, 192.231 )
+
+[node name="moedas23" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3640.26, 192.231 )
+
+[node name="moedas24" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3715.85, 189.711 )
+
+[node name="moedas25" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3788.93, 189.711 )
+
+[node name="moedas26" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3791.45, 275.386 )
+
+[node name="moedas32" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 3786.41, 358.541 )
+
+[node name="moedas7" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 4857.77, 298.896 )
+
+[node name="moedas33" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 4949.84, 295.721 )
+
+[node name="moedas34" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 4908.57, 225.876 )
+
+[node name="moedas8" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 5400.05, 203.769 )
+
+[node name="moedas35" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 5454.02, 203.769 )
+
+[node name="moedas36" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 5514.34, 203.769 )
+
+[node name="moedas37" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 5460.37, 114.875 )
+
+[node name="moedas9" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 6912.09, 236.971 )
+
+[node name="moedas10" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 6878.54, 325.527 )
+
+[node name="moedas38" parent="Moedas" instance=ExtResource( 7 )]
+position = Vector2( 6942.69, 321.963 )
+
+[node name="tiles" type="Node2D" parent="."]
+
+[node name="tileChao" type="TileMap" parent="tiles"]
 scale = Vector2( 0.5, 0.5 )
 tile_set = ExtResource( 2 )
 format = 1
 tile_data = PoolIntArray( -196608, 0, 0, -196365, 0, 0, -131072, 0, 0, -130829, 0, 0, -65536, 0, 0, -65293, 0, 0, 0, 0, 0, 243, 0, 0, 65536, 0, 0, 65779, 0, 0, 131072, 0, 0, 131315, 0, 0, 196608, 0, 0, 196851, 0, 0, 262144, 0, 0, 262387, 0, 0, 327680, 0, 0, 327923, 0, 0, 393216, 0, 0, 393459, 0, 0, 458752, 0, 0, 458995, 0, 0, 524288, 0, 0, 524531, 0, 0, 589824, 0, 0, 590067, 0, 0, 655360, 0, 0, 655603, 0, 0, 720896, 0, 0, 721139, 0, 0, 786432, 0, 0, 786675, 0, 0, 851968, 0, 0, 852211, 0, 0, 917504, 0, 0, 917747, 0, 0, 983040, 0, 0, 983283, 0, 0, 1048819, 0, 0, 1114112, 0, 0, 1114114, 0, 0, 1114116, 0, 0, 1114118, 0, 0, 1114120, 0, 0, 1114122, 0, 0, 1114124, 0, 0, 1114126, 0, 0, 1114128, 0, 0, 1114130, 0, 0, 1114132, 0, 0, 1114134, 0, 0, 1114136, 0, 0, 1114138, 0, 0, 1114140, 0, 0, 1114142, 0, 0, 1114144, 0, 0, 1114146, 0, 0, 1114148, 0, 0, 1114150, 0, 0, 1114152, 0, 0, 1114160, 0, 0, 1114162, 0, 0, 1114164, 0, 0, 1114166, 0, 0, 1114168, 0, 0, 1114170, 0, 0, 1114172, 0, 0, 1114174, 0, 0, 1114176, 0, 0, 1114178, 0, 0, 1114180, 0, 0, 1114182, 0, 0, 1114184, 0, 0, 1114186, 0, 0, 1114188, 0, 0, 1114190, 0, 0, 1114192, 0, 0, 1114194, 0, 0, 1114196, 0, 0, 1114198, 0, 0, 1114200, 0, 0, 1114201, 0, 0, 1114209, 0, 0, 1114211, 0, 0, 1114213, 0, 0, 1114215, 0, 0, 1114217, 0, 0, 1114219, 0, 0, 1114221, 0, 0, 1114223, 0, 0, 1114225, 0, 0, 1114226, 0, 0, 1114228, 0, 0, 1114230, 0, 0, 1114232, 0, 0, 1114234, 0, 0, 1114236, 0, 0, 1114238, 0, 0, 1114240, 0, 0, 1114242, 0, 0, 1114244, 0, 0, 1114246, 0, 0, 1114248, 0, 0, 1114250, 0, 0, 1114260, 0, 0, 1114262, 0, 0, 1114264, 0, 0, 1114266, 0, 0, 1114267, 0, 0, 1114269, 0, 0, 1114270, 0, 0, 1114276, 0, 0, 1114278, 0, 0, 1114280, 0, 0, 1114282, 0, 0, 1114283, 0, 0, 1114285, 0, 0, 1114287, 0, 0, 1114292, 0, 0, 1114294, 0, 0, 1114296, 0, 0, 1114303, 0, 0, 1114305, 0, 0, 1114307, 0, 0, 1114315, 0, 0, 1114317, 0, 0, 1114319, 0, 0, 1114321, 0, 0, 1114323, 0, 0, 1114325, 0, 0, 1114327, 0, 0, 1114329, 0, 0, 1114330, 0, 0, 1114332, 0, 0, 1114334, 0, 0, 1114336, 0, 0, 1114338, 0, 0, 1114339, 0, 0, 1114341, 0, 0, 1114343, 0, 0, 1114345, 0, 0, 1114347, 0, 0, 1114349, 0, 0, 1114351, 0, 0, 1114353, 0, 0, 1114355, 0, 0 )
 
-[node name="TileTubo" type="TileMap" parent="."]
+[node name="TileTubo" type="TileMap" parent="tiles"]
 scale = Vector2( 0.2, 0.2 )
+mode = 1
 tile_set = ExtResource( 3 )
 format = 1
-tile_data = PoolIntArray( 852294, 0, 0, 2162751, 0, 0, 2162776, 0, 0, 2162830, 0, 0, 2162905, 0, 0, 2163065, 0, 0, 2228740, 0, 0 )
+tile_data = PoolIntArray( -31653338, 0, 0, -29163008, 0, 0, -17235638, 0, 0, -15138518, 0, 0, -11599628, 0, 0, -7143248, 0, 0, -2097053, 0, 0 )
 
-[node name="TileBonus" type="TileMap" parent="."]
+[node name="TileBonus" type="TileMap" parent="tiles"]
 scale = Vector2( 0.12, 0.12 )
 tile_set = ExtResource( 5 )
 format = 1
 tile_data = PoolIntArray( 2818745, 0, 0, 2818754, 0, 0, 2818763, 0, 0, 2883650, 0, 0 )
 
-[node name="moedas" parent="." instance=ExtResource( 7 )]
-position = Vector2( 384, 192 )
-
-[node name="moedas2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 928, 96 )
-
-[node name="moedas3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1632.8, 405.683 )
-
-[node name="moedas4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2273.52, 427.04 )
-
-[node name="moedas5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 2305.55, 160.072 )
-
-[node name="moedas6" parent="." instance=ExtResource( 7 )]
-position = Vector2( 3907.36, 149.394 )
-
-[node name="moedas7" parent="." instance=ExtResource( 7 )]
-position = Vector2( 4857.77, 298.896 )
-
-[node name="moedas8" parent="." instance=ExtResource( 7 )]
-position = Vector2( 5400.05, 194.245 )
-
-[node name="moedas9" parent="." instance=ExtResource( 7 )]
-position = Vector2( 6627.31, 213.273 )
-
-[node name="TileTijolo" type="TileMap" parent="."]
+[node name="TileTijolo" type="TileMap" parent="tiles"]
 scale = Vector2( 0.2, 0.2 )
 tile_set = ExtResource( 4 )
 format = 1
 tile_data = PoolIntArray( 1442114, 0, 0, 1442119, 0, 0, 1442124, 0, 0, 1507503, 0, 0, 1507507, 0, 0, 1507509, 0, 0, 1507513, 0, 0, 1507515, 0, 0, 1507520, 0, 0, 1703960, 0, 0, 1703965, 0, 0, 1703970, 0, 0, 1703981, 0, 0, 1769789, 0, 0, 1769794, 0, 0, 1769799, 0, 0, 1769804, 0, 0, 1769809, 0, 0, 2097394, 0, 0, 2097399, 0, 0, 2097404, 0, 0, 2097409, 0, 0, 2097463, 0, 0, 2097467, 0, 0, 2097469, 0, 0, 2097474, 0, 0, 2097479, 0, 0, 2097484, 0, 0, 2097487, 0, 0, 2097492, 0, 0, 2425074, 0, 0, 2425079, 0, 0, 2425084, 0, 0, 2425089, 0, 0, 2425094, 0, 0, 2425138, 0, 0, 2425142, 0, 0, 2425144, 0, 0, 2425149, 0, 0, 2425154, 0, 0, 2425159, 0, 0, 2425164, 0, 0, 2425165, 0, 0, 2425167, 0, 0, 2425172, 0, 0, 2425176, 0, 0 )
 
-[node name="TileMap" type="TileMap" parent="."]
-scale = Vector2( 0.15, 0.2 )
-tile_set = ExtResource( 8 )
-format = 1
-tile_data = PoolIntArray( 721638, 0, 0 )
-
 [node name="Castelo" parent="." instance=ExtResource( 9 )]
-position = Vector2( 7306.49, 137.948 )
+position = Vector2( 7306.02, 140.193 )
 scale = Vector2( 0.521, 0.68 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -89,7 +178,80 @@ scale = Vector2( 0.521, 0.68 )
 motion_mirroring = Vector2( 1344, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 4.62331, 2.24495 )
-scale = Vector2( 0.647318, 0.547023 )
+position = Vector2( 5.89826, -36.4113 )
+scale = Vector2( 0.647318, 0.580847 )
 texture = ExtResource( 10 )
 centered = false
+
+[node name="Inimigos" type="Node2D" parent="."]
+
+[node name="Inimigo2" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 171.075, 99.2285 )
+velocidade = 40
+
+[node name="Inimigo3" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 1227.46, 106.797 )
+velocidade = 30
+
+[node name="Inimigo4" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 1712.11, 110.361 )
+
+[node name="Inimigo10" parent="Inimigos" instance=ExtResource( 12 )]
+position = Vector2( 888.917, 312.731 )
+vel = 50
+
+[node name="Inimigo11" parent="Inimigos" instance=ExtResource( 12 )]
+position = Vector2( 2506.49, 57.9342 )
+
+[node name="Inimigo12" parent="Inimigos" instance=ExtResource( 12 )]
+position = Vector2( 3910.54, 305.604 )
+
+[node name="Inimigo13" parent="Inimigos" instance=ExtResource( 12 )]
+position = Vector2( 7099.68, 308.601 )
+
+[node name="Personagem" type="Node2D" parent="."]
+
+[node name="Mario" parent="Personagem" instance=ExtResource( 1 )]
+position = Vector2( 99.2404, 459.877 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Camera2D" type="Camera2D" parent="Personagem/Mario"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_bottom = 0
+
+[node name="Mario2" parent="Personagem" instance=ExtResource( 1 )]
+position = Vector2( 374.713, 244.853 )
+scale = Vector2( 1.5, 1.5 )
+velocidade = -200
+
+[node name="bandeira" type="Node2D" parent="."]
+
+[node name="bandeira" parent="bandeira" instance=ExtResource( 8 )]
+position = Vector2( 6839.89, 3.98071 )
+
+[node name="placar" parent="." instance=ExtResource( 13 )]
+
+[node name="buraco" type="Node2D" parent="."]
+
+[node name="Buraco" parent="buraco" instance=ExtResource( 14 )]
+position = Vector2( 1006.42, 555.462 )
+
+[node name="Buraco2" parent="buraco" instance=ExtResource( 14 )]
+position = Vector2( 2612.48, 564.647 )
+
+[node name="Buraco3" parent="buraco" instance=ExtResource( 14 )]
+position = Vector2( 4216.2, 587.274 )
+
+[node name="Buraco4" parent="buraco" instance=ExtResource( 14 )]
+position = Vector2( 4643.29, 590.103 )
+
+[node name="Buraco5" parent="buraco" instance=ExtResource( 14 )]
+position = Vector2( 5039.27, 590.103 )
+
+[node name="Buraco6" parent="buraco" instance=ExtResource( 14 )]
+position = Vector2( 5839.71, 592.931 )
+[connection signal="finished" from="Som_Fundo" to="." method="_on_Som_Fundo_finished"]
+[connection signal="alterarPlacar" from="Personagem/Mario" to="placar" method="_on_Mario_alterarPlacar"]
+[connection signal="alterarVida" from="Personagem/Mario" to="placar" method="_on_Mario_alterarVida"]

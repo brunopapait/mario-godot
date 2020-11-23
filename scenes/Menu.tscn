@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/background/bgmenu.jpg" type="Texture" id=1]
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=2]
+[ext_resource path="res://assets/sons/sm64_happy_message.wav" type="AudioStream" id=3]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[node name="Fundo" type="Node2D" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Fundo"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Fundo/ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="Fundo/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 512, 320 )
+scale = Vector2( 1.84026, 1 )
+texture = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 2.88976, 2.62585 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Control"]
+margin_left = 88.5887
+margin_top = 36.5596
+margin_right = 185.589
+margin_bottom = 122.56
+rect_scale = Vector2( 1.94901, 1.94331 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/CenterContainer"]
+margin_right = 97.0
+margin_bottom = 86.0
+
+[node name="Label" type="Label" parent="Control/CenterContainer/VBoxContainer"]
+margin_right = 97.0
+margin_bottom = 14.0
+text = "MARIOSSAURO"
+align = 1
+valign = 1
+max_lines_visible = 0
+
+[node name="Start" type="Button" parent="Control/CenterContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 97.0
+margin_bottom = 38.0
+custom_colors/font_color_disabled = Color( 0.105882, 0.0117647, 0.0117647, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.721569, 0.933333, 0.694118, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Start"
+
+[node name="Sair" type="Button" parent="Control/CenterContainer/VBoxContainer"]
+margin_top = 42.0
+margin_right = 97.0
+margin_bottom = 62.0
+text = "Sair"
+
+[node name="Sobre" type="Button" parent="Control/CenterContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 97.0
+margin_bottom = 86.0
+text = "Sobre"
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/Sair" to="." method="_on_Sair_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/VBoxContainer/Sobre" to="." method="_on_Sobre_pressed"]

@@ -1,0 +1,574 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/background/fase3.jpg" type="Texture" id=1]
+[ext_resource path="res://tilesmap/chao.tres" type="TileSet" id=2]
+[ext_resource path="res://scenes/Mario.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Inimigo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://tilesmap/Tubo.tres" type="TileSet" id=5]
+[ext_resource path="res://scenes/Inimigo10.tscn" type="PackedScene" id=6]
+[ext_resource path="res://tilesmap/tijolo.tres" type="TileSet" id=7]
+[ext_resource path="res://scenes/moedas.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Castelo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scripts/Fase3.gd" type="Script" id=10]
+[ext_resource path="res://assets/sons/fase3fundo.wav" type="AudioStream" id=11]
+[ext_resource path="res://scenes/placar.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/Buraco.tscn" type="PackedScene" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 73.6055, 405.357 )
+
+[node name="Fase3" type="Node2D"]
+script = ExtResource( 10 )
+
+[node name="musicafundo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+
+[node name="castelo" type="Node2D" parent="."]
+
+[node name="Castelo" parent="castelo" instance=ExtResource( 9 )]
+position = Vector2( 11782.5, 172.556 )
+scale = Vector2( 0.51, 0.689 )
+
+[node name="moedas" type="Node2D" parent="."]
+
+[node name="moedas" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 243.735, 361.084 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas2" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 336.235, 362.5 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas3" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 290.929, 318.137 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas4" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 423.071, 286.99 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas5" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 421.183, 238.852 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas6" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 419.767, 189.299 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas7" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 498.581, 188.355 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas8" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 557.573, 185.995 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas9" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 702.458, 105.294 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas10" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 745.876, 105.294 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas11" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 786.935, 103.406 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas12" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 828.937, 102.462 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas13" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 870.939, 100.575 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas14" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1057.35, 185.995 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas15" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1095.58, 184.107 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas16" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1136.64, 183.635 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas17" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1534.48, 338.431 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas34" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1714.09, 370.958 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas35" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1765, 370.958 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas36" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1821.57, 370.958 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas37" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 2241.59, 513.793 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas38" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 2345.53, 514.5 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas39" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 2983.34, 502.48 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas40" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 2997.49, 213.273 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas41" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 3042.74, 211.152 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas42" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 3091.53, 211.152 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas43" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 3501.01, 514.793 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas44" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 3539.28, 515.031 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas45" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 3576.6, 514.793 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas46" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 3612.94, 515.542 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas47" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 3648.89, 515.542 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas48" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 3686.35, 516.291 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas49" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4659.36, 240.064 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas50" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4704.38, 283.275 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas51" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4704.82, 239.622 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas52" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4705.61, 195.174 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas53" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4658.06, 284.069 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas54" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4613.35, 195.168 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas55" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4611.24, 239.789 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas56" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4746, 238.028 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas57" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4746.44, 282.561 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas58" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4491.05, 375.691 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas59" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4455.77, 376.398 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas60" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4659.41, 192.967 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas61" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4612.31, 285.037 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas62" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4474.74, 336.274 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas63" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4748.56, 194.728 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas64" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4893.82, 500.145 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas65" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 4945.45, 497.9 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas66" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 5848.71, 387.192 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas67" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 5898.2, 387.192 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas68" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 5953.36, 385.778 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas69" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 5997.91, 385.778 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas70" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 6723.4, 373.757 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas71" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 7165.34, 380.121 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas72" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 7431.21, 215.365 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas73" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 7640.13, 216.213 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas76" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 7690.72, 215.365 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas77" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 7977.81, -40.6079 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas78" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 8015.28, -42.7292 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas79" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 8055.59, -41.315 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas80" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 8268.43, 41.4165 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas81" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 8268.43, 87.3784 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas82" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 8269.13, 137.583 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas83" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 8268.43, 189.909 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas84" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 8267.72, 238.699 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas85" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 8268.43, 286.076 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas86" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 8267.01, 335.573 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas87" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 8265.6, 380.121 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas88" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 9010.42, 417.727 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas89" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 9010.4, 460.31 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas90" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 9012.4, 508.541 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas91" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 9912.15, 513.856 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas92" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 9910.02, 463.132 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas93" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 9911.59, 415.078 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas94" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 10484.7, 514.243 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas95" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 10521.6, 513.054 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas96" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 10559.6, 513.054 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas74" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 7806.53, 312.949 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas75" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 7803.53, 369.885 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas18" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1070.65, 369.373 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas19" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1109.33, 368.532 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas20" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1107.65, 327.328 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas21" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 1071.49, 329.01 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas22" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 799.884, 371.896 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas23" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 861.269, 371.055 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas24" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 830.156, 329.01 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas25" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 828.474, 282.761 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas26" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 639.486, 447.81 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas27" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 673.976, 446.55 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas28" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 711.731, 446.078 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas29" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 749.958, 446.078 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas30" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 747.598, 400.773 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas31" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 638.109, 402.188 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas32" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 674.448, 401.716 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="moedas33" parent="moedas" instance=ExtResource( 8 )]
+position = Vector2( 711.259, 402.66 )
+scale = Vector2( 0.583, 0.537 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1115, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 564.765, 301.38 )
+scale = Vector2( 1.8205, 2.22127 )
+texture = ExtResource( 1 )
+
+[node name="tiles" type="Node2D" parent="."]
+
+[node name="chao" type="TileMap" parent="tiles"]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 589824, 0, 0, 589826, 0, 0, 589828, 0, 0, 589830, 0, 0, 589832, 0, 0, 589834, 0, 0, 589836, 0, 0, 589840, 0, 0, 589844, 0, 0, 589848, 0, 0, 589850, 0, 0, 589852, 0, 0, 589854, 0, 0, 589858, 0, 0, 589860, 0, 0, 589866, 0, 0, 589868, 0, 0, 589870, 0, 0, 589872, 0, 0, 589875, 0, 0, 589878, 0, 0, 589880, 0, 0, 589885, 0, 0, 589887, 0, 0, 589891, 0, 0, 589893, 0, 0, 589895, 0, 0, 589900, 0, 0, 589904, 0, 0, 589909, 0, 0, 589911, 0, 0, 589913, 0, 0, 589915, 0, 0, 589917, 0, 0, 589919, 0, 0, 589921, 0, 0, 589923, 0, 0, 589925, 0, 0, 589927, 0, 0, 589929, 0, 0, 589930, 0, 0, 589932, 0, 0, 589934, 0, 0, 589936, 0, 0, 589938, 0, 0, 589940, 0, 0, 589942, 0, 0, 589944, 0, 0, 589946, 0, 0, 589950, 0, 0, 589952, 0, 0, 589954, 0, 0, 589962, 0, 0, 589964, 0, 0, 589970, 0, 0, 589972, 0, 0, 589978, 0, 0, 589980, 0, 0, 589986, 0, 0, 589988, 0, 0, 589990, 0, 0, 589995, 0, 0, 589997, 0, 0, 589999, 0, 0, 590001, 0, 0, 590003, 0, 0, 590005, 0, 0, 590007, 0, 0, 590009, 0, 0, 590011, 0, 0, 590013, 0, 0 )
+
+[node name="tubos" type="TileMap" parent="tiles"]
+position = Vector2( 1, 0 )
+scale = Vector2( 0.237, 0.242 )
+tile_set = ExtResource( 5 )
+format = 1
+tile_data = PoolIntArray( 1835056, 0, 0, 1835073, 0, 0, 1835150, 0, 0, 1835204, 0, 0, 1835221, 0, 0, 1835268, 0, 0, 1835296, 0, 0, 1835370, 0, 0, 1835410, 0, 0, 1835444, 0, 0, 1835473, 0, 0, 1835516, 0, 0, 1835590, 0, 0, 1835630, 0, 0, 1835660, 0, 0, 1835736, 0, 0 )
+
+[node name="tijolos" type="TileMap" parent="tiles"]
+scale = Vector2( 0.1, 0.1 )
+tile_set = ExtResource( 7 )
+format = 1
+tile_data = PoolIntArray( -38797284, 0, 0, -327680, 0, 0, 0, 0, 0, 197847, 0, 0, 197852, 0, 0, 197857, 0, 0, 197862, 0, 0, 197867, 0, 0, 327680, 0, 0, 591057, 0, 0, 655360, 0, 0, 983040, 0, 0, 984267, 0, 0, 1310720, 0, 0, 1377477, 0, 0, 1638400, 0, 0, 1770687, 0, 0, 1966080, 0, 0, 2163897, 0, 0, 2293760, 0, 0, 2556007, 0, 0, 2556012, 0, 0, 2556017, 0, 0, 2556022, 0, 0, 2556027, 0, 0, 2556032, 0, 0, 2556037, 0, 0, 2556042, 0, 0, 2556047, 0, 0, 2556064, 0, 0, 2556069, 0, 0, 2556074, 0, 0, 2556079, 0, 0, 2556084, 0, 0, 2621440, 0, 0, 2819204, 0, 0, 2819209, 0, 0, 2819214, 0, 0, 2819232, 0, 0, 2819237, 0, 0, 2819242, 0, 0, 2819247, 0, 0, 2884049, 0, 0, 2884054, 0, 0, 2884059, 0, 0, 2884064, 0, 0, 2884068, 0, 0, 2949120, 0, 0, 2949195, 0, 0, 2949200, 0, 0, 2949205, 0, 0, 2949322, 0, 0, 2949327, 0, 0, 3276800, 0, 0, 3473867, 0, 0, 3539003, 0, 0, 3539008, 0, 0, 3539013, 0, 0, 3604480, 0, 0, 3605197, 0, 0, 3605202, 0, 0, 3605207, 0, 0, 3605212, 0, 0, 3605217, 0, 0, 3605222, 0, 0, 3670240, 0, 0, 3867077, 0, 0, 3932160, 0, 0, 4129005, 0, 0, 4259840, 0, 0, 4260979, 0, 0, 4260984, 0, 0, 4260989, 0, 0, 4260994, 0, 0, 4260999, 0, 0, 4261004, 0, 0, 4261009, 0, 0, 4325410, 0, 0, 4325415, 0, 0, 4325420, 0, 0, 4325425, 0, 0, 4325430, 0, 0, 4587520, 0, 0, 4587961, 0, 0, 4587966, 0, 0, 4915200, 0, 0, 5242880, 0, 0, 5244214, 0, 0, 5244230, 0, 0, 5244246, 0, 0, 5570560, 0, 0 )
+
+[node name="personagem" type="Node2D" parent="."]
+
+[node name="Mario" parent="personagem" instance=ExtResource( 3 )]
+position = Vector2( 77.5675, 505.892 )
+
+[node name="Camera2D" type="Camera2D" parent="personagem/Mario"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 12200
+limit_bottom = 0
+
+[node name="Inimigos" type="Node2D" parent="."]
+
+[node name="Inimigo3" parent="Inimigos" instance=ExtResource( 4 )]
+position = Vector2( 632.483, -158.794 )
+scale = Vector2( 0.996, 1.703 )
+velocidade = 15
+
+[node name="Inimigo5" parent="Inimigos" instance=ExtResource( 4 )]
+position = Vector2( 2409.6, -296.504 )
+scale = Vector2( 0.996, 1.703 )
+velocidade = 20
+
+[node name="Inimigo10" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 723.539, 247.051 )
+scale = Vector2( 1, 1.393 )
+vel = 45
+
+[node name="Inimigo11" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 1043.91, -77.1348 )
+scale = Vector2( 1, 1.393 )
+dist = 120
+
+[node name="Inimigo12" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 2015.98, 249.496 )
+scale = Vector2( 1, 1.393 )
+dist = 140
+
+[node name="Inimigo13" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 3139.18, 246.6 )
+scale = Vector2( 1, 1.393 )
+dist = 140
+
+[node name="Inimigo14" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 6002.54, 250.106 )
+scale = Vector2( 1, 1.393 )
+vel = 35
+
+[node name="Inimigo15" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 7642, 87.7662 )
+scale = Vector2( 1, 1.393 )
+dist = 120
+
+[node name="Inimigo17" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 7144.86, 248.066 )
+scale = Vector2( 1, 1.393 )
+vel = 40
+dist = 170
+
+[node name="Inimigo18" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 6658.57, 249.126 )
+scale = Vector2( 1, 1.393 )
+vel = 40
+dist = 250
+
+[node name="Inimigo19" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 6145.16, 248.115 )
+scale = Vector2( 1, 1.393 )
+vel = 40
+dist = 250
+
+[node name="Inimigo16" parent="Inimigos" instance=ExtResource( 6 )]
+position = Vector2( 8502.28, 246.686 )
+scale = Vector2( 1, 1.393 )
+dist = 120
+
+[node name="bandeira" type="Node2D" parent="."]
+
+[node name="proxima" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="proxima"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="proxima/Area2D"]
+position = Vector2( 12044.7, 170.74 )
+shape = SubResource( 1 )
+
+[node name="placar" parent="." instance=ExtResource( 12 )]
+scale = Vector2( 0.948, 1.131 )
+transform = Transform2D( 0.948, 0, 0, 1.131, 0, 0 )
+
+[node name="buraco" type="Node2D" parent="."]
+
+[node name="Buraco" parent="buraco" instance=ExtResource( 13 )]
+position = Vector2( 807.198, 671.488 )
+
+[node name="Buraco2" parent="buraco" instance=ExtResource( 13 )]
+position = Vector2( 1955.2, 681.488 )
+
+[node name="Buraco3" parent="buraco" instance=ExtResource( 13 )]
+position = Vector2( 3155.2, 691.488 )
+
+[node name="Buraco4" parent="buraco" instance=ExtResource( 13 )]
+position = Vector2( 4057.2, 693.488 )
+
+[node name="Buraco5" parent="buraco" instance=ExtResource( 13 )]
+position = Vector2( 4875.2, 691.488 )
+
+[node name="Buraco6" parent="buraco" instance=ExtResource( 13 )]
+position = Vector2( 7585.2, 723.488 )
+
+[node name="Buraco7" parent="buraco" instance=ExtResource( 13 )]
+position = Vector2( 8387.2, 723.488 )
+
+[node name="Buraco8" parent="buraco" instance=ExtResource( 13 )]
+position = Vector2( 9207.2, 721.488 )
+
+[node name="Buraco9" parent="buraco" instance=ExtResource( 13 )]
+position = Vector2( 10015.2, 723.488 )
+
+[node name="Buraco10" parent="buraco" instance=ExtResource( 13 )]
+position = Vector2( 10429.2, 725.488 )
+[connection signal="finished" from="musicafundo" to="." method="_on_AudioStreamPlayer_finished"]
+[connection signal="alterarPlacar" from="personagem/Mario" to="placar" method="_on_Mario_alterarPlacar"]
+[connection signal="alterarVida" from="personagem/Mario" to="placar" method="_on_Mario_alterarVida"]
+[connection signal="body_entered" from="proxima/Area2D" to="." method="_on_Area2D_body_entered"]

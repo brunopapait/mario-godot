@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://assets/personagem/Walk (8).png" type="Texture" id=1]
 [ext_resource path="res://scripts/Mario.gd" type="Script" id=2]
@@ -10,7 +10,11 @@
 [ext_resource path="res://assets/personagem/Walk (2).png" type="Texture" id=8]
 [ext_resource path="res://assets/personagem/Walk (3).png" type="Texture" id=9]
 [ext_resource path="res://assets/personagem/Walk (1).png" type="Texture" id=10]
+[ext_resource path="res://assets/personagem/Dead (2).png" type="Texture" id=11]
+[ext_resource path="res://assets/personagem/Dead (7).png" type="Texture" id=12]
 [ext_resource path="res://assets/personagem/Idle (10).png" type="Texture" id=13]
+[ext_resource path="res://assets/personagem/Dead (3).png" type="Texture" id=14]
+[ext_resource path="res://assets/personagem/Dead (4).png" type="Texture" id=15]
 [ext_resource path="res://assets/personagem/Idle (2).png" type="Texture" id=16]
 [ext_resource path="res://assets/personagem/Idle (4).png" type="Texture" id=17]
 [ext_resource path="res://assets/personagem/Idle (7).png" type="Texture" id=18]
@@ -19,11 +23,31 @@
 [ext_resource path="res://assets/personagem/Idle (3).png" type="Texture" id=21]
 [ext_resource path="res://assets/personagem/Idle (8).png" type="Texture" id=22]
 [ext_resource path="res://assets/personagem/Idle (9).png" type="Texture" id=23]
+[ext_resource path="res://assets/personagem/Dead (5).png" type="Texture" id=24]
+[ext_resource path="res://assets/personagem/Dead (6).png" type="Texture" id=25]
+[ext_resource path="res://assets/personagem/Dead (8).png" type="Texture" id=26]
+[ext_resource path="res://assets/personagem/Dead (1).png" type="Texture" id=27]
+[ext_resource path="res://assets/personagem/Jump (7).png" type="Texture" id=28]
+[ext_resource path="res://assets/personagem/Jump (12).png" type="Texture" id=29]
 [ext_resource path="res://assets/personagem/Jump (10).png" type="Texture" id=30]
+[ext_resource path="res://assets/personagem/Jump (6).png" type="Texture" id=31]
+[ext_resource path="res://assets/personagem/Jump (1).png" type="Texture" id=32]
+[ext_resource path="res://assets/personagem/Jump (2).png" type="Texture" id=33]
+[ext_resource path="res://assets/personagem/Jump (9).png" type="Texture" id=34]
+[ext_resource path="res://assets/personagem/Jump (5).png" type="Texture" id=35]
+[ext_resource path="res://assets/personagem/Jump (8).png" type="Texture" id=36]
+[ext_resource path="res://assets/personagem/Jump (3).png" type="Texture" id=37]
+[ext_resource path="res://assets/personagem/Jump (4).png" type="Texture" id=38]
+[ext_resource path="res://assets/personagem/Jump (11).png" type="Texture" id=39]
+[ext_resource path="res://assets/sons/smb_jump-super.wav" type="AudioStream" id=40]
+[ext_resource path="res://assets/sons/smb_coin.wav" type="AudioStream" id=41]
+[ext_resource path="res://assets/sons/smb_1-up.wav" type="AudioStream" id=42]
+[ext_resource path="res://assets/sons/smb_kick.wav" type="AudioStream" id=43]
+[ext_resource path="res://assets/sons/smw_yoshi_spit.wav" type="AudioStream" id=44]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 30 ) ],
+"frames": [ ExtResource( 30 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 35 ), ExtResource( 31 ), ExtResource( 28 ), ExtResource( 36 ), ExtResource( 34 ), ExtResource( 30 ), ExtResource( 39 ), ExtResource( 29 ) ],
 "loop": true,
 "name": "caindo",
 "speed": 2.0
@@ -37,23 +61,56 @@ animations = [ {
 "loop": true,
 "name": "parado",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 11 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 12 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "morto",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 23.4889, 43.4533 )
+extents = Vector2( 13.9154, 43.4533 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 11.3658, 10 )
 
 [node name="Mario" type="KinematicBody2D"]
-position = Vector2( 128, 32 )
+position = Vector2( 22.1604, 32 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -17.0645, -32 )
 scale = Vector2( 0.119213, 0.214434 )
 frames = SubResource( 1 )
-animation = "caindo"
+animation = "parado"
+frame = 4
 playing = true
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 6.67419, 14.6832 )
 shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 7.50103, 49.6325 )
+shape = SubResource( 3 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="salto" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource( 40 )
+
+[node name="getmoeda" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource( 41 )
+
+[node name="vida" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource( 42 )
+
+[node name="morteinimigo" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource( 43 )
+
+[node name="perdeuvida" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource( 44 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

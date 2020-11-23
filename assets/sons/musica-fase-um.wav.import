@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/musica-fase-um.wav-7519b3377ded5b304b5b66f1fbc001d7.sample"
+
+[deps]
+
+source_file="res://assets/sons/musica-fase-um.wav"
+dest_files=[ "res://.import/musica-fase-um.wav-7519b3377ded5b304b5b66f1fbc001d7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

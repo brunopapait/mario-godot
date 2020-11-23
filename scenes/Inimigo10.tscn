@@ -1,0 +1,83 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://scripts/Inimigo10.gd" type="Script" id=1]
+[ext_resource path="res://assets/inimigoGato/Walk (8).png" type="Texture" id=2]
+[ext_resource path="res://assets/inimigoGato/Idle (4).png" type="Texture" id=3]
+[ext_resource path="res://assets/inimigoGato/Idle (6).png" type="Texture" id=4]
+[ext_resource path="res://assets/inimigoGato/Walk (9).png" type="Texture" id=5]
+[ext_resource path="res://assets/inimigoGato/Walk (10).png" type="Texture" id=6]
+[ext_resource path="res://assets/inimigoGato/Idle (5).png" type="Texture" id=7]
+[ext_resource path="res://assets/inimigoGato/Walk (3).png" type="Texture" id=8]
+[ext_resource path="res://assets/inimigoGato/Fall (5).png" type="Texture" id=9]
+[ext_resource path="res://assets/inimigoGato/Idle (9).png" type="Texture" id=10]
+[ext_resource path="res://assets/inimigoGato/Idle (10).png" type="Texture" id=11]
+[ext_resource path="res://assets/inimigoGato/Fall (1).png" type="Texture" id=12]
+[ext_resource path="res://assets/inimigoGato/Fall (7).png" type="Texture" id=13]
+[ext_resource path="res://assets/inimigoGato/Idle (7).png" type="Texture" id=14]
+[ext_resource path="res://assets/inimigoGato/Fall (2).png" type="Texture" id=15]
+[ext_resource path="res://assets/inimigoGato/Idle (3).png" type="Texture" id=16]
+[ext_resource path="res://assets/inimigoGato/Walk (7).png" type="Texture" id=17]
+[ext_resource path="res://assets/inimigoGato/Walk (5).png" type="Texture" id=18]
+[ext_resource path="res://assets/inimigoGato/Fall (3).png" type="Texture" id=19]
+[ext_resource path="res://assets/inimigoGato/Walk (4).png" type="Texture" id=20]
+[ext_resource path="res://assets/inimigoGato/Idle (2).png" type="Texture" id=21]
+[ext_resource path="res://assets/inimigoGato/Fall (6).png" type="Texture" id=22]
+[ext_resource path="res://assets/inimigoGato/Fall (4).png" type="Texture" id=23]
+[ext_resource path="res://assets/inimigoGato/Idle (8).png" type="Texture" id=24]
+[ext_resource path="res://assets/inimigoGato/Fall (8).png" type="Texture" id=25]
+[ext_resource path="res://assets/inimigoGato/Walk (2).png" type="Texture" id=26]
+[ext_resource path="res://assets/inimigoGato/Walk (6).png" type="Texture" id=27]
+[ext_resource path="res://assets/inimigoGato/Idle (1).png" type="Texture" id=28]
+[ext_resource path="res://assets/inimigoGato/Walk (1).png" type="Texture" id=29]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 24 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "parado",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 26 ), ExtResource( 8 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 27 ), ExtResource( 17 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "andando",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 9 ), ExtResource( 22 ), ExtResource( 13 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "teste",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 14.2525
+height = 8.52808
+
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 18.083
+height = 0.0
+
+[node name="Inimigo10" type="StaticBody2D"]
+position = Vector2( 560.197, 138.864 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -239.583, 211.513 )
+scale = Vector2( 0.115931, 0.10754 )
+frames = SubResource( 1 )
+animation = "andando"
+frame = 6
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -241.487, 208.841 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -240.556, 215.753 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

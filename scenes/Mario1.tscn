@@ -1,0 +1,60 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://assets/personagem/Walk (8).png" type="Texture" id=1]
+[ext_resource path="res://scripts/Mario1.gd" type="Script" id=2]
+[ext_resource path="res://assets/personagem/Walk (10).png" type="Texture" id=3]
+[ext_resource path="res://assets/personagem/Walk (9).png" type="Texture" id=4]
+[ext_resource path="res://assets/personagem/Walk (5).png" type="Texture" id=5]
+[ext_resource path="res://assets/personagem/Walk (6).png" type="Texture" id=6]
+[ext_resource path="res://assets/personagem/Walk (4).png" type="Texture" id=7]
+[ext_resource path="res://assets/personagem/Walk (2).png" type="Texture" id=8]
+[ext_resource path="res://assets/personagem/Walk (3).png" type="Texture" id=9]
+[ext_resource path="res://assets/personagem/Walk (1).png" type="Texture" id=10]
+[ext_resource path="res://assets/personagem/Idle (10).png" type="Texture" id=13]
+[ext_resource path="res://assets/personagem/Idle (2).png" type="Texture" id=16]
+[ext_resource path="res://assets/personagem/Idle (4).png" type="Texture" id=17]
+[ext_resource path="res://assets/personagem/Idle (7).png" type="Texture" id=18]
+[ext_resource path="res://assets/personagem/Idle (5).png" type="Texture" id=19]
+[ext_resource path="res://assets/personagem/Idle (6).png" type="Texture" id=20]
+[ext_resource path="res://assets/personagem/Idle (3).png" type="Texture" id=21]
+[ext_resource path="res://assets/personagem/Idle (8).png" type="Texture" id=22]
+[ext_resource path="res://assets/personagem/Idle (9).png" type="Texture" id=23]
+[ext_resource path="res://assets/personagem/Jump (10).png" type="Texture" id=30]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "caindo",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 18 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "parado",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "andando",
+"speed": 8.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 23.4889, 56.4644 )
+
+[node name="Mario1" type="KinematicBody2D"]
+position = Vector2( 385.387, 39.7781 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -6.45776, -45.052 )
+scale = Vector2( 0.123, 0.287 )
+frames = SubResource( 1 )
+animation = "caindo"
+playing = true
+centered = false
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 31.1277, 14.1551 )
+shape = SubResource( 2 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/castelo.png-3e782bb233c33e636c40b04273e8c914.stex"
+path="res://.import/Idle (2).png-2b18ce81726946aa8aeeaa6351b8f361.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/castelo.png"
-dest_files=[ "res://.import/castelo.png-3e782bb233c33e636c40b04273e8c914.stex" ]
+source_file="res://assets/inimigo/Idle (2).png"
+dest_files=[ "res://.import/Idle (2).png-2b18ce81726946aa8aeeaa6351b8f361.stex" ]
 
 [params]
 

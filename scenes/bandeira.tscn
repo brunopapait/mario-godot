@@ -1,23 +1,33 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/tile/bandeira.png" type="Texture" id=1]
+[ext_resource path="res://scripts/final.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 239.35, 1124.27 )
+extents = Vector2( 178.444, 1124.27 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 262.854, 983.733 )
 
 [node name="bandeira" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 288, 64 )
-scale = Vector2( 0.267391, 0.227704 )
+scale = Vector2( 0.243478, 0.227704 )
 texture = ExtResource( 1 )
 centered = false
-__meta__ = {
-"_edit_group_": true
-}
+script = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
-position = Vector2( 478.699, 983.734 )
+position = Vector2( 478.7, 983.733 )
 shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="Sprite"]
+position = Vector2( -788.572, 421.6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Area2D"]
+position = Vector2( 1314.29, 702.667 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Sprite/Area2D" to="Sprite" method="_on_Area2D_body_entered"]
